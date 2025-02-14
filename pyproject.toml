@@ -1,7 +1,7 @@
 [project]
 name = "contxt"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.1.1"
+description = """A CLI utility for analyzing and flattening contextual informationinto consolidated files with metadata."""
 requires-python = ">=3.11"
 dependencies = [
     "alembic>=1.14.0",
