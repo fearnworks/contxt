@@ -1,0 +1,72 @@
+# File structure
+
+[files.".gitignore"]
+type = "file"
+size = 134
+lines = 13
+
+[files.".python-version"]
+type = "file"
+size = 5
+lines = 0
+
+[files."contxt.toml"]
+type = "file"
+size = 154
+lines = 11
+
+[files."pyproject.toml"]
+type = "file"
+size = 562
+lines = 31
+
+[files."pytest.ini"]
+type = "file"
+size = 616
+lines = 30
+
+[files."README.md"]
+type = "file"
+size = 0
+lines = 0
+
+[files."Taskfile.yml"]
+type = "file"
+size = 89
+lines = 7
+
+[files."uv.lock"]
+type = "file"
+size = 72274
+lines = 0
+
+[files.".cursor\rules\documentation.mdc"]
+type = "file"
+size = 9377
+lines = 0
+
+[files.".cursor\rules\rst_docs.mdc"]
+type = "file"
+size = 19416
+lines = 0
+
+[files.".github\workflows\pypi-publish.yml"]
+type = "file"
+size = 1721
+lines = 58
+
+[files."contxt\logger.py"]
+type = "file"
+size = 51
+lines = 3
+
+[files."contxt\repo_flattener.py"]
+type = "file"
+size = 19677
+lines = 450
+
+[files."contxt\__init__.py"]
+type = "file"
+size = 0
+lines = 0
+

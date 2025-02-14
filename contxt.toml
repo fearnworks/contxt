@@ -1,0 +1,11 @@
+ignore_dirs = [
+    "node_modules",
+    "venv",
+    ".git"
+]
+
+# Predefined actions
+[actions.example]
+input_dir = "."
+output_dir = "./example"
+
