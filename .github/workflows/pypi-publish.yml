@@ -31,6 +31,7 @@ jobs:
         uv pip install --upgrade pip
         uv sync
         uv pip install -e ".[dev]"
+        uv pip install pytest
     - name: Verify package
       run: |
         pytest -v -m "not integration"
