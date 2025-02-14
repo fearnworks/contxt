@@ -104,3 +104,18 @@ def test_repo_flattener_action(runner, sample_repo, config_file, tmp_path):
     assert "ignored_file.txt" in flattened_content
     # Check if the nested_dir files are not in the flattened output
     assert "nested_dir" not in flattened_content
+
+
+def test_repo_flattener_local(runner, sample_repo, monkeypatch, tmp_path):
+    """
+    GIVEN a sample repository and a temporary working directory
+    WHEN the flattener is run with the --local flag
+    THEN the output is generated in .local/contxt/<repo_name> directory.
+    """
+    # Change working directory to tmp_path so that the standardized output is predictable
+    monkeypatch.chdir(tmp_path)
+    result = runner.invoke(main, [str(sample_repo)])
+    assert result.exit_code == 0
+    local_output_dir = tmp_path / ".local" / "contxt" / sample_repo.name
+    assert (local_output_dir / f"structure_{sample_repo.name}.toml").exists()
+    assert (local_output_dir / f"flattened_{sample_repo.name}.txt").exists()

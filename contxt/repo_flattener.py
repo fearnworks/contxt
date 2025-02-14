@@ -594,6 +594,9 @@ def main(input_dir, output_dir, structure_only, include_ignored, config, action)
     INPUT_DIR: The directory to analyze (optional if specified in config)
     OUTPUT_DIR: The directory where output files will be created (optional if specified in config)
     """
+    if input_dir and not output_dir:
+        output_dir = Path(".local") / "contxt" / Path(input_dir).name
+        logger.info(f"Using standardized local output directory: {output_dir.resolve()}")
     try:
         flattener = RepoFlattener(input_dir, output_dir, include_ignored, config, action)
         structure_only = flattener.structure_only if action else structure_only
