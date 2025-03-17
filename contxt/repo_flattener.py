@@ -200,6 +200,7 @@ class RepoFlattener:
             "dokuwiki",
             "mediawiki",
             "creole",
+            "mdc",  # Added .mdc extension for documentation
             # Data Formats
             "csv",
             "tsv",
@@ -318,6 +319,22 @@ class RepoFlattener:
     def should_ignore(self, item):
         logger.debug(f"Checking if {item} should be ignored")
         base_item = os.path.basename(item)
+
+        # Check if the file is a lock file
+        if base_item.endswith('.lock') or base_item in {
+            "package-lock.json", 
+            "yarn.lock", 
+            "pnpm-lock.yaml",
+            "composer.lock",
+            "Gemfile.lock",
+            "Cargo.lock",
+            "poetry.lock",
+            "pdm.lock",
+            "npm-shrinkwrap.json",
+            "bun.lockb"
+        }:
+            logger.debug(f"Ignoring {item} because it's a lock file")
+            return True
 
         # Check if the path is in ignored directories
         try:
