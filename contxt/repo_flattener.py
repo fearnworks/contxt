@@ -201,6 +201,8 @@ class RepoFlattener:
             "mediawiki",
             "creole",
             "mdc",  # Added .mdc extension for documentation
+            "sysml",
+            "kerml",
             # Data Formats
             "csv",
             "tsv",
@@ -331,7 +333,15 @@ class RepoFlattener:
             "poetry.lock",
             "pdm.lock",
             "npm-shrinkwrap.json",
-            "bun.lockb"
+            "bun.lockb",
+            "Pipfile.lock",
+            "go.sum",
+            "mix.lock",
+            "pubspec.lock",
+            "vcpkg.json",
+            "conan.lock",
+            "deno.lock",
+            "swift-package.lock"
         }:
             logger.debug(f"Ignoring {item} because it's a lock file")
             return True
